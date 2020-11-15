@@ -1,0 +1,47 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block title %}
+    Yasin's Portfolio
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center mb-5 mt-3">
+            <div class="col-10 col-sm-8 col-md-4">
+                <img class="img-fluid rounded" src="{% static 'portfolio/person.webp' %}" alt="me">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-8 text-center">
+                <h3 class="font-weight-bold">I'm Yasin, I live in NewYork 😊</h3>
+            </div>
+        </div>
+
+        <h2 class="goldman mt-5">Portfolio</h2>
+        <hr>
+        <div class="row ">
+            {% for project in projects %}
+                <div class="col-10 col-md-4 mx-auto">
+                    {% if project.url %}
+                        <a href='{{ project.url }}' target="_blanket"><img src="{{ project.image.url }}" class="img-fluid rounded"></a>
+                        {% else %}
+                        <img src="{{ project.image.url }}" class="img-fluid rounded">
+                    {% endif %}
+                    
+                    <h2 class="text-center text-capitalize mt-3">{{ project.title }}</h2>
+                    <p class="text-center text-capitalize">{{ project.description }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <hr>
+        <div class="row justify-content-center">
+            <div class="col-10 col-md-6 mb-4 mt-3 d-flex justify-content-around">
+                <a href="https://twitter.com/" target="_blanket"><span class="fa fa-2x fa-twitter text-primary"></span></a>
+                <a href="https://github.com/" target="_blanket"><span class="fa fa-2x fa-github text-dark"></span></a>
+                <a href="https://www.instagram.com/" target="_blanket"><span class="fa fa-2x fa-instagram text-danger"></span></a>
+                <a href="https://www.linkedin.com/" target="_blanket"><span class="fa fa-2x fa-linkedin text-info"></span></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

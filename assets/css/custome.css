@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Goldman&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+a.nav-link {
+    padding: 5px 20px !important;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid white;
+    transition: all 0.5s ease;
+    outline: none;
+}
+
+a.active {
+    color: #30475e !important;
+}
+
+a.blog {
+    border-radius: 4px;
+}
+
+a.blog:hover {
+    background-color: whitesmoke;
+    border: 1px solid #222831;
+    color: #222831 !important;
+    border-radius: 4px;
+}
+
+a.nav-link:hover {
+    color: #7e7474 !important;
+}
+
+.goldman {
+    font-family: 'Goldman', cursive;
+    font-size: 28px;
+}
+
+a.navbar-brand::after {
+    content: '>';
+    margin-left: 2px;
+    font-size: 30px;
+}
+a.navbar-brand::before {
+    content: '</';
+    margin-right: 2px;
+    font-size: 30px;
+}
